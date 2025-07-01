@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュースサイト風テキストファイル表示</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>架空ニュース</h1>
+        <nav>
+            <ul>
+                <li><a href="#">トップ</a></li>
+                <li><a href="#">政治</a></li>
+                <li><a href="#">経済</a></li>
+                <li><a href="#">スポーツ</a></li>
+                <li><a href="#">テクノロジー</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-news">
+            <h2>注目のニュース</h2>
+            <div id="news-content">
+                <!-- ここにJavaScriptでテキストファイルの内容が表示される -->
+            </div>
+        </section>
+
+        <section class="sidebar">
+            <h3>人気記事</h3>
+            <ul>
+                <li><a href="#">記事1のタイトル</a></li>
+                <li><a href="#">記事2のタイトル</a></li>
+                <li><a href="#">記事3のタイトル</a></li>
+                <li><a href="#">記事4のタイトル</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 架空ニュース</p>
+    </footer>
+
+    <script>
+        // ファイル名を設定 (同じディレクトリにあることを前提)
+        const fileName = "C:\Users\HayatoYamagata\Desktop\News\news.txt";
+
+        // テキストファイルの内容を読み込む関数
+        function loadTextFile(file) {
+            fetch(file)
+                print(file)
+                .then(response => response.text())
+                .then(data => {
+                    // 読み込んだ内容をHTMLに表示
+                    document.getElementById("news-content").innerText = data;
+                })
+                .catch(error => {
+                    console.error("ファイルの読み込みエラー:", error);
+                    document.getElementById("news-content").innerText = "ファイルの読み込みに失敗しました。";
+                });
+        }
+
+        // ページ読み込み時にテキストファイルを読み込む
+        window.onload = function() {
+            loadTextFile(fileName);
+        };
+    </script>
+</body>
+</html>
