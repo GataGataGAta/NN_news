@@ -1,73 +1,147 @@
-/* style.css */
+/* ===== 基本スタイル ===== */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
     color: #333;
 }
 
-header {
-    background-color: #007bff;
+header, footer {
+    background-color: #222;
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem;
     text-align: center;
 }
 
-header h1 {
+footer p {
     margin: 0;
 }
 
+/* ===== ナビゲーションバー ===== */
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 10px 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
 }
 
-nav li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-main {
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ===== カテゴリページ（ニュース一覧） ===== */
+.article-list {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.article-list h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+/* ===== ニュースカードのグリッドレイアウト ===== */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.news-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 1rem 0;
+}
+
+.news-card p {
+    font-size: 0.95rem;
+    margin: 0.5rem 1rem 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ===== レスポンシブ対応（スマホなど） ===== */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr; /* 1列に */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+/* 全体レイアウト調整 */
+.main-layout {
     display: flex;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem;
 }
 
+/* 左カラム: 注目記事（やや広め） */
 .main-news {
-    flex: 2;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex: 3;
+}
+.main-news article {
+    margin-bottom: 2rem;
 }
 
-.main-news h2 {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+.main-news img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
 }
-
+/* 右カラム: 人気記事（やや細め） */
 .sidebar {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
+    flex: 1.2;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 .sidebar h3 {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
 }
 
 .sidebar ul {
@@ -76,17 +150,77 @@ main {
 }
 
 .sidebar li {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
 
 .sidebar a {
-    color: #007bff;
+    display: block;
     text-decoration: none;
+    color: #000;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+.sidebar img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar h4 {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+
+.sidebar p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 人気記事カードの基本デザイン */
+.sidebar li {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/* カード内リンク全体をブロック化 */
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+}
+
+/* カードのホバー効果 */
+.sidebar li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 画像の整形 */
+.sidebar img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+/* タイトルとテキスト */
+.sidebar h4 {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+
+.sidebar p {
+    font-size: 0.9rem;
+    color: #333;
 }
