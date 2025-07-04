@@ -1,10 +1,10 @@
 // Service Workerの登録
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    // GitHub Pagesのパスを考慮してService WorkerのURLを構築する
-    // 例: yourusername.github.io/your-repo-name/sw.js
-    const basePath = window.location.pathname.split('/')[1]; // リポジトリ名を取得
-    const swUrl = `/${basePath}/sw.js`;
+    // リポジトリ名を含んだ絶対パスを直接指定
+    // または、sw.jsがHTMLと同じ階層にあるなら './sw.js'
+    const swUrl = '/NN_news/sw.js'; 
+    console.log('Attempting to register Service Worker at:', swUrl);
 
     navigator.serviceWorker.register(swUrl)
       .then(registration => {

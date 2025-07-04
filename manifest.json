@@ -1,21 +1,43 @@
 {
-  "name": "架空ニュース",
-  "short_name": "架空ニュース",
-  "start_url": "./index.html",
+  "name": "My Awesome PWA",
+  "short_name": "AwesomePWA",
+  "description": "これは素晴らしいPWAのデモです。",
+  "start_url": "/NN_news/index.html",
   "display": "standalone",
-  "background_color": "#f5f5f5",
-  "theme_color": "#222222",
-  "description": "ニュースの内容はすべてフィクションです",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "/NN_news/images/icon-192x192.png", 
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/NN_news/images/icon-512x512.png", 
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/NN_news/images/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/NN_news/images/screenshot1.png", 
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Home screen of Awesome PWA"
+    },
+    {
+      "src": "/NN_news/images/screenshot2.png", 
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home screen of Awesome PWA (mobile)"
     }
   ]
 }
