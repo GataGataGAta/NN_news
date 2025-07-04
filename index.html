@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Awesome PWA">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <meta charset="UTF-8" />
     <title>架空ニュース - トップページ</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <header>
         <h1>架空ニュース *ニュースの内容はすべてフィクションです</h1>
@@ -34,7 +41,7 @@
                 <h2>注目記事：「幸福税」導入検討か</h2>
                 <img src="news/013/img.png" alt="幸福税導入" />
                 <p>
-                    【驚報】日本政府、全国民に「幸福税」導入を検討中！？ 
+                    【驚報】日本政府、全国民に「幸福税」導入を検討中！？
                     日本政府が新たに「幸福税」と名付けられた税制を導入する計画があるとの情報が流れ、世間を騒然とさせている。
                 </p>
                 <p><a href="articles/article_013.html">続きはこちら</a></p>
@@ -88,5 +95,7 @@
     <footer>
         <p>&copy; 2024 架空ニュース</p>
     </footer>
+    <script src="/scripts/register-sw.js"></script>
 </body>
+
 </html>
