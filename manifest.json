@@ -1,7 +1,7 @@
 {
   "name": "My Awesome PWA",
-  "short_name": "AwesomePWA",
-  "description": "これは素晴らしいPWAのデモです。",
+  "short_name": "Fakenews_app",
+  "description": "フェイクニュースのアプリです",
   "start_url": "/NN_news/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
